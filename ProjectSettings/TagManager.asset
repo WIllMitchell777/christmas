@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CinemachineTarget
   - Enemy
+  - GroundChecker
   layers:
   - Default
   - TransparentFX

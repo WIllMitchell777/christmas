@@ -120,8 +120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 20
-  Damage: 15
-  KnockbackForce: 3
+  Damage: 10
+  KnockbackForce: 2
   DoesKnockback: 1
   Lifetime: 50
 --- !u!54 &1051086920864980203
