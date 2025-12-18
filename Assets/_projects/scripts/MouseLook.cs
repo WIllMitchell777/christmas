@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,7 @@ public class MouseLook : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         xRotation -= mouseY;
+        xRotation = Math.Clamp(xRotation, -70f, 70f);
         yRotation += mouseX;
         transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
 
