@@ -11,14 +11,12 @@ public class PlayerHealthManager : MonoBehaviour
     Rigidbody RB;
     CapsuleCollider BC;
     PlayerMovement PM;
-    GameObject PlayerSpawn;
 
     void Start()
     {
         RB = (Rigidbody)gameObject.GetComponent("Rigidbody");
         BC = (CapsuleCollider)gameObject.GetComponent("CapsuleCollider");
-        PM = (PlayerMovement)gameObject.GetComponent("PlayerController");
-        PlayerSpawn = GameObject.FindWithTag("Respawn");
+        PM = (PlayerMovement)gameObject.GetComponent("PlayerMovement");
     }
 
     public void TakeDamage(int Damage, Vector3 Source, bool Knockback)
@@ -32,7 +30,7 @@ public class PlayerHealthManager : MonoBehaviour
                 RB.velocity = new Vector3(0, 0, 0);
                 Vector3 DirectionalForce = (transform.position - Source);
                 DirectionalForce = new Vector3(Math.Sign(DirectionalForce.x), 1, Math.Sign(DirectionalForce.z));
-                RB.velocity = DirectionalForce * 5;
+                RB.velocity = DirectionalForce * 3;
                 StartCoroutine(MoveCD());
             }
             if (Health <= 0)
@@ -48,7 +46,7 @@ public class PlayerHealthManager : MonoBehaviour
 
     IEnumerator MoveCD()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         PM.CanMove = true;
     }
 

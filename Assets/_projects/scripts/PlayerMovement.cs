@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         bool Found = false;
         foreach (Collider collider in colliders)
         {
-            if (collider.gameObject.tag != "Player") //Change to collider.tag == "JumpAllowed" if you want to only have specific parts be jumpable on (give them the JumpAllowed tag)
+            if (collider.gameObject.tag != "Player" && collider.tag != "Snowball" && collider.tag != "Enemy") //Change to collider.tag == "JumpAllowed" if you want to only have specific parts be jumpable on (give them the JumpAllowed tag)
             {
                 Found = true;
                 break;
