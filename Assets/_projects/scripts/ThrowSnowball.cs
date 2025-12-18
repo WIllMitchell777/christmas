@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ThrowSnowball : MonoBehaviour
 {
+    public float Yoffset;
     public float Cooldown;
     public GameObject Camera;
     public GameObject SnowballPrefab;
@@ -24,7 +25,7 @@ public class ThrowSnowball : MonoBehaviour
             AttackCD = true;
             ////////////spawn snowball////////////
             GameObject NewProjectile = Instantiate(SnowballPrefab);
-            NewProjectile.transform.position = gameObject.transform.position + new Vector3(0, 1, 0) + (gameObject.transform.forward);
+            NewProjectile.transform.position = gameObject.transform.position + new Vector3(0, Yoffset, 0) + (gameObject.transform.forward);
             NewProjectile.transform.rotation = gameObject.transform.rotation;
             yield return 0;
             ProjectileScript NewProjectileScript = (ProjectileScript)NewProjectile.GetComponent("ProjectileScript");
