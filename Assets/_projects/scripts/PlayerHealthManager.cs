@@ -12,12 +12,14 @@ public class PlayerHealthManager : MonoBehaviour
     Rigidbody RB;
     CapsuleCollider BC;
     PlayerMovement PM;
+    ScoreScript SS;
 
     void Start()
     {
         RB = (Rigidbody)gameObject.GetComponent("Rigidbody");
         BC = (CapsuleCollider)gameObject.GetComponent("CapsuleCollider");
         PM = (PlayerMovement)gameObject.GetComponent("PlayerMovement");
+        SS = (ScoreScript)GameObject.FindGameObjectWithTag("GameController").GetComponent("ScoreScript");
     }
 
     public void TakeDamage(int Damage, Vector3 Source, bool Knockback)
@@ -42,6 +44,7 @@ public class PlayerHealthManager : MonoBehaviour
             {
                 Health = MaxHealth;
             }
+            SS.HealthChanged(Health);
         }
     }
 
