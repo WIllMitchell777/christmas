@@ -28,7 +28,7 @@ public class ThrowSnowball : MonoBehaviour
             NewProjectile.transform.rotation = gameObject.transform.rotation;
             yield return 0;
             ProjectileScript NewProjectileScript = (ProjectileScript)NewProjectile.GetComponent("ProjectileScript");
-            NewProjectileScript.Fire(Camera.transform.forward);
+            StartCoroutine(NewProjectileScript.Fire(Camera.transform.forward,"Enemy"));
             ///////////////////////////////////
             yield return new WaitForSeconds(Cooldown);
             AttackCD = false;
