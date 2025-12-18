@@ -256,7 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Yoffset: 1
   Yforce: 1
-  Cooldown: 1
+  Cooldown: 2
   ThrowsSnowballs: 1
   SnowballPrefab: {fileID: 5042742175605314096, guid: 8c8e6b36a5291cf47a5d60acae6297a8, type: 3}
 --- !u!1 &8218661457330299162
