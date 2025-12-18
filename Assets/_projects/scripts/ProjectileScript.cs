@@ -15,7 +15,7 @@ public class ProjectileScript : MonoBehaviour
         RB = (Rigidbody)gameObject.GetComponent("Rigidbody");
     }
 
-    public void Fire(Vector3 PlayerLookDirection, int PlayerLookY)
+    public void Fire(Vector3 PlayerLookDirection)
     {
         RB.velocity = (PlayerLookDirection * Speed) + new Vector3(0, 1f, 0); //Extra upwards force
     }
