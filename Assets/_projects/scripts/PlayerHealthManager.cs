@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthManager : MonoBehaviour
 {
@@ -56,7 +57,7 @@ public class PlayerHealthManager : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
         //Send player to game over screen
-
+        SceneManager.LoadScene("MainMenu");
         //
     }
 }
