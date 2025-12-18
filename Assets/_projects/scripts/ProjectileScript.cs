@@ -37,5 +37,9 @@ public class ProjectileScript : MonoBehaviour
             EHM.TakeDamage(Damage, transform.position, DoesKnockback, KnockbackForce);
             Destroy(gameObject);
         }
+        else if (collision.gameObject.tag != "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 }
