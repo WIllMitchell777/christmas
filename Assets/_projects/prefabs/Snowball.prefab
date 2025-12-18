@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1051086920864980203}
   m_Layer: 0
   m_Name: Snowball
-  m_TagString: Untagged
+  m_TagString: Snowball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 20
-  Damage: 10
+  Damage: 5
   KnockbackForce: 2
   DoesKnockback: 1
   Lifetime: 50

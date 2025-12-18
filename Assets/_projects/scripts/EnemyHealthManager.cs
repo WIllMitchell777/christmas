@@ -6,11 +6,13 @@ using UnityEngine;
 public class EnemyHealthManager : MonoBehaviour
 {
     public int Health;
+    EnemyMovementChase EM;
     Rigidbody RB;
 
     void Start()
     {
         RB = (Rigidbody)gameObject.GetComponent("Rigidbody");
+        EM = (EnemyMovementChase)gameObject.GetComponent("EnemyMovementChase");
     }
 
     public void TakeDamage(int Damage, Vector3 Source, bool Knockback, float Force)
@@ -22,10 +24,18 @@ public class EnemyHealthManager : MonoBehaviour
             Vector3 DirectionalForce = (transform.position - Source);
             DirectionalForce = new Vector3(Math.Sign(DirectionalForce.x), 1, Math.Sign(DirectionalForce.z));
             RB.velocity = DirectionalForce * Math.Abs(Force);
+            EM.CanMove = false;
+            StartCoroutine(MoveCD());
         }
         if (Health <= 0)
         {
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator MoveCD()
+    {
+        yield return new WaitForSeconds(0.5f);
+        EM.CanMove = true;
     }
 }

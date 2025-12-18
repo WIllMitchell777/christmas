@@ -7,6 +7,7 @@ TagManager:
   - CinemachineTarget
   - Enemy
   - GroundChecker
+  - Snowball
   layers:
   - Default
   - TransparentFX
