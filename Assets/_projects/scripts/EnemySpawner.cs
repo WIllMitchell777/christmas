@@ -12,6 +12,7 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator Start()
     {
+        yield return new WaitForSeconds(3f);
         while (true)
         {
             //Spawn Enemy
