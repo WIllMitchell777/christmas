@@ -8,11 +8,13 @@ public class EnemyHealthManager : MonoBehaviour
     public int Health;
     EnemyMovementChase EM;
     Rigidbody RB;
+    ScoreScript SS;
 
     void Start()
     {
         RB = (Rigidbody)gameObject.GetComponent("Rigidbody");
         EM = (EnemyMovementChase)gameObject.GetComponent("EnemyMovementChase");
+        SS = (ScoreScript)GameObject.FindGameObjectWithTag("GameController").GetComponent("ScoreScript");
     }
 
     public void TakeDamage(int Damage, Vector3 Source, bool Knockback, float Force)
@@ -29,6 +31,7 @@ public class EnemyHealthManager : MonoBehaviour
         }
         if (Health <= 0)
         {
+            SS.IncreaseScore();
             Destroy(gameObject);
         }
     }
