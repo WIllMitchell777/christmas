@@ -1631,6 +1631,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Christmas tree_3
       objectReference: {fileID: 0}
+    - target: {fileID: 7661831499170780667, guid: fe4a39498efe61c47937f5d418f0c6cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.392
+      objectReference: {fileID: 0}
+    - target: {fileID: 7661831499170780667, guid: fe4a39498efe61c47937f5d418f0c6cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.017
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2248,15 +2256,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6945001726971170519, guid: 4097080ed2ff4d94fa6c29fb2db01006, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6945001726971170519, guid: 4097080ed2ff4d94fa6c29fb2db01006, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6945001726971170519, guid: 4097080ed2ff4d94fa6c29fb2db01006, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6945001726971170519, guid: 4097080ed2ff4d94fa6c29fb2db01006, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2268,7 +2276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6945001726971170519, guid: 4097080ed2ff4d94fa6c29fb2db01006, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.69
+      value: 1220
       objectReference: {fileID: 0}
     - target: {fileID: 6945001726971170519, guid: 4097080ed2ff4d94fa6c29fb2db01006, type: 3}
       propertyPath: m_LocalRotation.w
