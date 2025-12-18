@@ -5,8 +5,9 @@ using UnityEngine;
 public class ProjectileScript : MonoBehaviour
 {
     public int Speed;
-    public Vector3 Direction;
-    public int PlayerLookY;
+    public int Damage;
+    public int KnockbackForce;
+    public bool DoesKnockback;
     Rigidbody RB;
 
     private void Start()
@@ -14,9 +15,9 @@ public class ProjectileScript : MonoBehaviour
         RB = (Rigidbody)gameObject.GetComponent("Rigidbody");
     }
 
-    public void Fire()
+    public void Fire(Vector3 PlayerLookDirection, int PlayerLookY)
     {
-        RB.velocity = (Direction * Speed) + new Vector3(0, 1.5f, 0);
+        RB.velocity = (PlayerLookDirection * Speed) + new Vector3(0, 1f, 0); //Extra upwards force
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -24,7 +25,7 @@ public class ProjectileScript : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             EnemyHealthManager EHM = (EnemyHealthManager)collision.GetComponent("EnemyHealthManager");
-            //EHM.TakeDamage(15, transform.position, true);
+            EHM.TakeDamage(Damage, transform.position, DoesKnockback, KnockbackForce);
             Destroy(gameObject);
         }
         if (collision.gameObject.layer != 3 && collision.gameObject.layer != 6)
